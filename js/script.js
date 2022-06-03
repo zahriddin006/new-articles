@@ -63,9 +63,9 @@ let renderArticles = function(useData){
     $(".article-description", articleTemplate).textContent = article.description;
     $(".article-Time", articleTemplate).textContent = article.publishedAt.split("T").splice(0, 1);
     $(".js-url-link", articleTemplate).href = article.url;
-    $(".js-article-modal-opener", articleTemplate).setAttribute("data-bs-target", `#contentModal${article.publishedAt.split(":").shift()}`);
+    $(".js-article-modal-opener", articleTemplate).setAttribute("data-bs-target", `#contentModal${article.publishedAt.split(":").join("").split("-").join("")}`);
 
-    $(".more-modal", modalTemplate).id = `contentModal${article.publishedAt.split(":").shift()}`;
+    $(".more-modal", modalTemplate).id = `contentModal${article.publishedAt.split(":").join("").split("-").join("")}`;
     $(".modal-title", modalTemplate).textContent = article.title;
     $(".content", modalTemplate).textContent = article.content;
     articleTemplate.appendChild(modalTemplate);
