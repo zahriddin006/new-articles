@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imtihon Maketi</title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+  <main class="main-news">
+    <div class="container">
+      <div class="news-inner row">
+        <div class="col-4 mt-3">
+          <form class="js-sort-form p-3" action="https://echo.htmlacademy.ru" method="get">
+            <input class="js-search-input form-control mb-3" type="search" placeholder="Search" name="Search"
+              aria-label="search-input">
+
+            <select class="js-articles-select form-select mb-3" name="article-mode" aria-label="article-mode">
+              <option value="publishedAt" selected>publishedAt</option>
+              <option value="popularity">popularity</option>
+              <option value="relevancy">relevancy</option>
+            </select>
+
+            <button class="js-search-btn btn btn-primary p-2 w-50" type="submit">Search</button>
+          </form>
+        </div>
+
+        <div class="col-8 p-0 mt-3">
+          <ul
+            class="js-search-result-list articles-list list-unstyled d-flex flex-wrap justify-content-around align-items-center">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <template class="js-article-template">
+    <li class="article-item m-2" data-imdb-id="">
+      <div class="card">
+        <img class="article-poster card-img-top" src="" alt="" width="300"
+          height="200">
+
+        <div class="card-body">
+          <h3 class="article-title h5"></h3>
+
+          <p class="card-text">
+            <span>Author:</span>
+            <span class="article-author ps-2"></span>
+          </p>
+
+          <p class="card-text">
+            <span>Time:</span>
+            <span class="article-Time ps-2"></span>
+          </p>
+
+          <p class="card-text">
+            <span>Descriprion:</span>
+            <span class="article-description ps-2"></span>
+          </p>
+
+          <p class="card-text d-flex flex-column flex-md-row flex-wrap justify-content-around">
+            <button class="js-article-modal-opener btn btn-outline-info" type="button" 
+            data-bs-toggle="modal" data-bs-target="#exampleModal">
+              More info
+            </button>
+            <a class="js-url-link btn btn-outline-primary" href="" target="_blank">Url Link</a>
+          </p>
+        </div>
+      </div>
+    </li>
+  </template>
+
+  <template id="modal-template">
+    <div class="modal fade more-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="content"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+
+
+  <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/utils.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
